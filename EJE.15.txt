@@ -1,0 +1,32 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+  
+        Console.WriteLine("Ingrese un número entero:");
+        int numero;
+
+        while (!int.TryParse(Console.ReadLine(), out numero))
+        {
+            Console.WriteLine("Entrada no válida. Por favor, ingrese un número entero:");
+        }
+
+        int sumaDigitos = CalcularSumaDigitos(numero);
+
+        Console.WriteLine($"La suma de los dígitos de {numero} es: {sumaDigitos}");
+    }
+
+    static int CalcularSumaDigitos(int n)
+    {
+        int suma = 0;
+      
+        while (n != 0)
+        {
+            suma += n % 10; 
+            n /= 10; 
+        }
+        return suma;
+    }
+}

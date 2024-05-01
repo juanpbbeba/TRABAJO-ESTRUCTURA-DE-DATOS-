@@ -1,0 +1,25 @@
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main()
+    {
+        
+        List<int> cuadrados = new List<int>();
+
+
+        for (int i = 1; i <= 10; i++)
+        {
+            int cuadrado = i * i; // Calculamos el cuadrado de cada número
+            cuadrados.Add(cuadrado); // Agregamos el cuadrado a la lista
+        }
+
+
+        Console.WriteLine("Los cuadrados de los primeros 10 números naturales son:");
+        foreach (int numero in cuadrados)
+        {
+            Console.WriteLine(numero);
+        }
+    }
+}

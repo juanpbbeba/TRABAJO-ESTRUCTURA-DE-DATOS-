@@ -1,0 +1,32 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Ingrese la base del triángulo:");
+        double baseTriangulo;
+        
+        
+        while (!double.TryParse(Console.ReadLine(), out baseTriangulo) || baseTriangulo <= 0)
+        {
+            Console.WriteLine("Entrada no válida. Por favor, ingrese un número positivo para la base del triángulo:");
+        }
+
+        
+        Console.WriteLine("Ingrese la altura del triángulo:");
+        double alturaTriangulo;
+        
+        
+        while (!double.TryParse(Console.ReadLine(), out alturaTriangulo) || alturaTriangulo <= 0)
+        {
+            Console.WriteLine("Entrada no válida. Por favor, ingrese un número positivo para la altura del triángulo:");
+        }
+
+        
+        double areaTriangulo = (baseTriangulo * alturaTriangulo) / 2;
+
+        
+        Console.WriteLine($"El área del triángulo con base {baseTriangulo} y altura {alturaTriangulo} es: {areaTriangulo}");
+    }
+}

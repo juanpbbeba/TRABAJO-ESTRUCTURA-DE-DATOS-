@@ -1,0 +1,37 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Ingrese una cadena de texto:");
+        string texto = Console.ReadLine();
+
+      
+        int contadorVocales = ContarVocales(texto);
+
+       
+        Console.WriteLine($"El número de vocales en la cadena de texto es: {contadorVocales}");
+    }
+
+    static int ContarVocales(string cadena)
+    {
+       
+        cadena = cadena.ToLower();
+
+       
+        int contador = 0;
+
+     
+        foreach (char caracter in cadena)
+        {
+        
+            if (caracter == 'a' || caracter == 'e' || caracter == 'i' || caracter == 'o' || caracter == 'u')
+            {
+                contador++;
+            }
+        }
+
+        return contador;
+    }
+}

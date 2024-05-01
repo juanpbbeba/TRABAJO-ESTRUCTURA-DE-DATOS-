@@ -1,0 +1,42 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        
+        Console.WriteLine("Ingrese el número inicial del rango:");
+        int inicio;
+        while (!int.TryParse(Console.ReadLine(), out inicio))
+        {
+            Console.WriteLine("Entrada no válida. Por favor, ingrese un número entero:");
+        }
+
+        Console.WriteLine("Ingrese el número final del rango:");
+        int fin;
+        while (!int.TryParse(Console.ReadLine(), out fin) || fin < inicio)
+        {
+            Console.WriteLine($"Entrada no válida. Por favor, ingrese un número entero mayor o igual a {inicio}:");
+        }
+
+
+        int sumaPares = CalcularSumaPares(inicio, fin);
+
+        
+        Console.WriteLine($"La suma de los números pares en el rango [{inicio}, {fin}] es: {sumaPares}");
+    }
+
+    static int CalcularSumaPares(int inicio, int fin)
+    {
+        int suma = 0;
+     
+        for (int i = inicio; i <= fin; i++)
+        {
+            if (i % 2 == 0)
+            {
+                suma += i;
+            }
+        }
+        return suma;
+    }
+}

@@ -1,0 +1,27 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Ingrese una cadena de texto:");
+        string texto = Console.ReadLine();
+
+        string textoInvertido = InvertirCadena(texto);
+        Console.WriteLine($"La cadena invertida es: {textoInvertido}");
+    }
+
+    static string InvertirCadena(string cadena)
+    {
+        
+        char[] caracteres = cadena.ToCharArray();
+
+        
+        Array.Reverse(caracteres);
+
+        
+        string cadenaInvertida = new string(caracteres);
+
+        return cadenaInvertida;
+    }
+}

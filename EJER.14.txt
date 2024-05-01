@@ -1,0 +1,21 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Ingrese el radio del círculo:");
+        double radio;
+
+        while (!double.TryParse(Console.ReadLine(), out radio) || radio <= 0)
+        {
+            Console.WriteLine("Entrada no válida. Por favor, ingrese un número positivo para el radio del círculo:");
+        }
+
+        
+        double area = Math.PI * Math.Pow(radio, 2);
+
+        
+        Console.WriteLine($"El área del círculo con radio {radio} es: {area}");
+    }
+}

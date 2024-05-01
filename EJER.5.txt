@@ -1,0 +1,52 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Ingrese un número para verificar si es primo:");
+        int numero;
+        
+        
+        while (!int.TryParse(Console.ReadLine(), out numero) || numero < 2)
+        {
+            Console.WriteLine("Entrada no válida. Por favor, ingrese un número entero mayor o igual a 2:");
+        }
+
+        bool esPrimo = VerificarPrimo(numero);
+
+        
+        if (esPrimo)
+        {
+            Console.WriteLine($"El número {numero} es primo.");
+        }
+        else
+        {
+            Console.WriteLine($"El número {numero} no es primo.");
+        }
+    }
+
+    static bool VerificarPrimo(int n)
+    {
+        if (n == 2)
+        {
+            return true;
+        }
+
+        if (n % 2 == 0)
+        {
+            return false;
+        }
+
+        int limite = (int)Math.Sqrt(n);
+        for (int i = 3; i <= limite; i += 2)
+        {
+            if (n % i == 0)
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
+}
